@@ -2,6 +2,7 @@ variables
 {
 	global:
 		0: MrDestructoVector
+		1: MrDestructoFacing
 		2: CurrentIndex
 }
 
@@ -32,8 +33,9 @@ rule("Initialize Variables / Map Setup")
 
 	actions
 	{
-		Global.CurrentIndex = -1;
+		Global.CurrentIndex = 0;
 		Global.MrDestructoVector = Array(0);
+		Global.MrDestructoFacing = Array(0);
 		Disable Built-In Game Mode Announcer;
 		Disable Built-In Game Mode Completion;
 		Disable Built-In Game Mode Music;
@@ -62,7 +64,8 @@ rule("Append Reaper Locations to Array")
 	actions
 	{
 		Global.CurrentIndex += 1;
-		Modify Global Variable(MrDestructoVector, Append To Array, Eye Position(Event Player));
+		Modify Global Variable(MrDestructoVector, Append To Array, Position Of(Event Player));
+		Modify Global Variable(MrDestructoFacing, Append To Array, Eye Position(Event Player));
 		Small Message(Event Player, Custom String("Appending vector({0})", Position Of(Event Player)));
 	}
 }
@@ -85,6 +88,7 @@ rule("Remove Last Reaper Location From Array")
 	actions
 	{
 		Modify Global Variable(MrDestructoVector, Remove From Array By Index, Global.CurrentIndex);
+		Modify Global Variable(MrDestructoFacing, Remove From Array By Index, Global.CurrentIndex);
 		Small Message(Event Player, Custom String("Removing vector({0})", Position Of(Event Player)));
 		Global.CurrentIndex -= 1;
 	}
