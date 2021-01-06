@@ -1,0 +1,99 @@
+variables
+{
+	global:
+		0: MrDestructoVector
+		2: CurrentIndex
+}
+
+rule("readme.txt")
+{
+	event
+	{
+		Ongoing - Global;
+	}
+}
+
+rule("Remove Hero Assembly")
+{
+	event
+	{
+		Ongoing - Global;
+	}
+
+	conditions
+	{
+		Is Assembling Heroes == True;
+	}
+
+	actions
+	{
+		Set Match Time(1);
+	}
+}
+
+rule("Initialize Variables / Map Setup")
+{
+	event
+	{
+		Ongoing - Global;
+	}
+
+	actions
+	{
+		Global.CurrentIndex = -1;
+		Global.MrDestructoVector = Array(0);
+		Disable Built-In Game Mode Announcer;
+		Disable Built-In Game Mode Completion;
+		Disable Built-In Game Mode Music;
+		Disable Built-In Game Mode Scoring;
+		Set Match Time(3599);
+		Pause Match Time;
+		Wait(0.250, Ignore Condition);
+	}
+}
+
+rule("Append Reaper Locations to Array")
+{
+	event
+	{
+		Ongoing - Each Player;
+		All;
+		All;
+	}
+
+	conditions
+	{
+		Host Player == True;
+		Is Button Held(Event Player, Button(Interact)) == True;
+	}
+
+	actions
+	{
+		Global.CurrentIndex += 1;
+		Modify Global Variable(MrDestructoVector, Append To Array, Eye Position(Event Player));
+		Small Message(Event Player, Custom String("Appending vector({0})", Position Of(Event Player)));
+	}
+}
+
+rule("Remove Last Reaper Location From Array")
+{
+	event
+	{
+		Ongoing - Each Player;
+		All;
+		All;
+	}
+
+	conditions
+	{
+		Host Player == True;
+		Is Button Held(Event Player, Button(Reload)) == True;
+	}
+
+	actions
+	{
+		Modify Global Variable(MrDestructoVector, Remove From Array By Index, Global.CurrentIndex);
+		Small Message(Event Player, Custom String("Removing vector({0})", Position Of(Event Player)));
+		Global.CurrentIndex -= 1;
+	}
+}
