@@ -38,7 +38,8 @@ Not included as there is nothing really breakable:
 
 2. In Workshop, a yellow button will appear at the top. Click that button to paste the contents that you copied in step one.  
 
-3. Add the entire condition statement to the Hax Framework rule named *Player Joins, Current CP Color*.  
+3. Paste the entire condition statement to the Hax Framework rule named *Player Joins, Current CP Color* using the yellow button that appears in the *conditions* section of the rule.  
+
 Be sure to copy from the word *conditions* to the closing curly brace *}*.
 ```
 conditions
