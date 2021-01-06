@@ -1,7 +1,8 @@
 # Map Data for MrDestructo
-Credit goes to DiaZ/AOD for creating MrDestructo.  
+Credit goes to DiaZ/AOD for creating MrDestructo and to whoever put together Rialto and Hollywood.
 I decided to create map data for each map. I've included the entire subroutine.  
 I know for sure this will work with Hax Framework.  
+
 Not included as there is nothing really breakable:  
 - King's Row
 - Ecopoint: Antartica
