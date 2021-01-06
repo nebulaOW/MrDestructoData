@@ -5,14 +5,6 @@ variables
 		2: CurrentIndex
 }
 
-rule("readme.txt")
-{
-	event
-	{
-		Ongoing - Global;
-	}
-}
-
 rule("Remove Hero Assembly")
 {
 	event
