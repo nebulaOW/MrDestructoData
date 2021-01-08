@@ -1,5 +1,6 @@
 # Map Data for MrDestructo
-Credit goes to DiaZ/AOD for creating MrDestructo and to whoever put together Rialto and Hollywood.
+I found the code for MrDestructo on a map made in the DiaZ/AOD framework.   
+**Credit goes to Janni for creating MrDestructo** and to whoever put together Rialto and Hollywood.
 I decided to create map data for each map. I've included the entire subroutine.  
 I know for sure this will work with Hax Framework.  
 
