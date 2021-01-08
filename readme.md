@@ -34,7 +34,7 @@ Not included as there is nothing really breakable:
 - [Route 66](/Maps/Route66.txt)
 - [Temple of Anubis](/Maps/TempleOfAnubis.txt)
 - [Volskaya Industries](/Maps/VolskayaIndustries.txt)
-- [Watchpoint: Gibralter](/Maps/WatchpointGibralter.txt)
+- [Watchpoint: Gibraltar](/Maps/WatchpointGibraltar.txt)
 - [Empty Map (For future maps)](/Maps/EmptyMap.txt)
 
 2. In Workshop, a yellow button will appear at the top. Click that button to paste the contents that you copied in step one.  
