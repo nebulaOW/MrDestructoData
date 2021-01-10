@@ -1,18 +1,17 @@
 variables
 {
 	global:
-		71: i
-		72: MrDestructoVector
-		73: MrDestructoFacing
-		74: MrDestructo
+		105: MrDestructoVector
+		106: MrDestructo
+		107: i
 }
 
 subroutines
 {
-	20: MrDestructo
+	105: MrDestructo
 }
 
-rule("MrDestructo Data")
+rule("Mr Destructo Data")
 {
 	event
 	{
@@ -21,6 +20,7 @@ rule("MrDestructo Data")
 
 	actions
 	{
+		Global.i = 0;
 		Global.MrDestructoVector = Array(0, Vector(122.775, -0.238, -34.612), Vector(122.813, 0.497, -36.473), Vector(122.826, 1.149,
 			-37.775), Vector(122.012, 1.760, -39.647), Vector(120.389, 2.567, -39.484), Vector(118.832, 3.346, -39.475), Vector(117.291,
 			4.112, -39.475), Vector(115.646, 4.937, -39.556), Vector(114.186, 5.667, -39.726), Vector(113.349, 5.759, -37.493), Vector(
@@ -101,36 +101,12 @@ rule("MrDestructo Data")
 			-142.011), Vector(-49.258, 4.750, -141.822), Vector(-48.074, 4.750, -141.891), Vector(-46.600, 4.750, -141.866), Vector(
 			-46.031, 4.750, -140.326), Vector(-46.325, 4.637, -138.773), Vector(-46.382, 3.973, -137.448), Vector(-46.259, 3.019,
 			-135.538), Vector(-46.190, 2.750, -134.846));
-		Global.MrDestructoFacing = Array(0, -93.505, -90.516, -90.516, -33.212, -14.425, -13.035, -12.426, -3.235, 7.081, 64.677, 80.079,
-			-90.692, -90.692, -90.692, -90.692, 179.813, 177.869, 177.869, 177.869, 177.869, 177.869, 123.442, 95.323, 95.323, -86.517,
-			-90.577, -91.187, -91.840, -91.840, -91.840, -95.208, -87.369, -89.841, -90.176, 1.159, 1.159, 1.357, 1, -0.566, 0.049, 0.544,
-			1.099, -88.198, -88.275, -86.913, -84.139, -17.748, -3.175, -0.286, -0.346, -0.346, -0.346, -0.346, 127.480, 154.688, -176.567,
-			-173.535, -177.874, 179.615, 179.258, -168.684, -118.098, -115.406, -179.775, 173.397, 172.408, 172.408, 172.524, -174.765,
-			-175.237, -72.614, -55.646, -59.584, -71.230, 97.344, 97.740, 96.751, 97.465, 94.730, 94.927, 94.927, 94.927, 94.927, 9.811,
-			2.999, 5.158, 5.158, 5.158, 5.158, 5.158, 5.158, -85.446, -87.451, 80.634, 84.183, 84.320, 86.083, 118.493, 176.050, 177.242,
-			176.885, 172.271, 176.847, 175.995, 175.995, -103.458, -94.768, -92.944, -92.944, -96.097, 0.764, 11.217, 86.814, 89.050,
-			88.594, 90.934, 89.050, 89.050, 89.050, 89.050, 177.698, -174.880, 90.879, 151.128, -53.503, -55.322, -90.725, -91.401,
-			-91.401, -91.401, -25.961, -175.726, -177.133, -179.923, 154.138, 103.689, 93.214, 96.422, 94.301, 91.230, 91.390, 121.943,
-			-179.055, -173.908, -173.947, -173.705, -174.935, -174.359, -165.828, -159.192, -87.319, -77.992, -91.895, -112.088, -156.105,
-			-163.707, -162.521, -80.903, -86.786, -98.366, -99.360, -92.390, -93.576, -104.623, -97.438, -103.101, -102.486, 97.355,
-			98.009, 97.416, 98.009, -178.594, 179.819, -179.802, 179.011, 179.011, 179.011, 179.011, 179.011, 179.011, 179.011, -0.934,
-			-2.576, -2.576, -2.576, 0.813, -0.297, -0.297, -0.851, 3.922, 1.011, -5.306, -46.785, -79.557, -82.288, -83.595, -83.914,
-			-87.572, -88.879, -88.879, -88.879, -88.940, -95.850, -141.411, -157.467, -165.229, -172.062, -172.557, -174.397, 121.492,
-			114.560, 102.025, 98.520, 101.492, 113.313, 121.075, 110.363, 117.114, 114.939, 118.856, 42.687, 4.395, 12.173, -179.885,
-			-179.429, 175.660, 179.742, -176.814, -176.814, 0.835, -1.027, -47.598, -106.144, 90.621, 92.818, 71.494, -84.210, -92.390,
-			-92.686, 40.034, -0.341, -37.980, -91.560, -89.736, -91.082, -91.082, -91.082, -91.082, -91.082, -91.082, -91.082, -91.082,
-			-91.082, -91.082, -91.082, -91.082, 91.967, 91.313, 90.225, 90.110, 91.313, -122.503, -45.385, -18.375, -91.044, -91.044,
-			-91.044, -91.044, -91.044, -22.297, -16.633, -2.203, 5.680, 48.131, 74.268, 75.690, 80.524, 80.524, 80.524, 80.898, 94.202,
-			94.043, 94.482, 96.636, 95.433, 132.319, 147.387, -173.886, -174.699, -173.529, 89.945, 91.472, 92.203, 91.571, 86.600, 67.692,
-			37.870, 17.040, 3.400, 2.884, -24.181, -61.705, -73.070, -78.333, -84.650, -84.650);
-		Modify Global Variable(MrDestructoVector, Append To Array, 69);
-		disabled Global.MrDestructoVector[0] = 420;
-		Wait(0.250, Ignore Condition);
+		Modify Global Variable(MrDestructoVector, Append To Array, 9999);
 		Call Subroutine(MrDestructo);
 	}
 }
 
-rule("MrDestructo Sub")
+rule("Subroutine: MrDestructo | Created by Janni")
 {
 	event
 	{
@@ -140,15 +116,14 @@ rule("MrDestructo Sub")
 
 	actions
 	{
-		If(Global.MrDestructoVector[Global.i] == 69);
-			disabled Destroy All Dummy Bots;
+		If(Global.MrDestructoVector[Global.i] == 9999);
 			Destroy Dummy Bot(Team 1, 5);
 			Wait(1.100, Ignore Condition);
 			Pause Match Time;
 		End;
-		Abort If(Global.MrDestructoVector[Global.i] == 69);
+		Abort If(Global.MrDestructoVector[Global.i] == 9999);
 		If(Global.MrDestructoVector[Global.i] == 0);
-			Create Dummy Bot(Hero(Reaper), Team 1, 5, Global.MrDestructoVector[Global.i], Global.MrDestructoFacing[Global.i]);
+			Create Dummy Bot(Hero(Reaper), Team 1, 5, Global.MrDestructoVector[Global.i], Vector(0, 0, 0));
 			Global.MrDestructo = Last Created Entity;
 			Wait(0.250, Ignore Condition);
 			Set Ultimate Ability Enabled(Global.MrDestructo, True);
@@ -156,7 +131,6 @@ rule("MrDestructo Sub")
 		Wait(0.050, Ignore Condition);
 		Set Ultimate Charge(Global.MrDestructo, 100);
 		Teleport(Global.MrDestructo, Global.MrDestructoVector[Global.i]);
-		Set Facing(Global.MrDestructo, Direction From Angles(Global.MrDestructoFacing[Global.i], 0), To World);
 		Start Holding Button(Global.MrDestructo, Button(Ultimate));
 		Wait(0.550, Ignore Condition);
 		Global.i = Global.i + 1;
