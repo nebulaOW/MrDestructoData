@@ -93,3 +93,39 @@ rule("Remove Last Reaper Location From Array")
 		Global.CurrentIndex -= 1;
 	}
 }
+
+rule("Simple TP by IlusionNinja#11130")
+{
+	event
+	{
+		Ongoing - Each Player;
+		All;
+		All;
+	}
+
+	conditions
+	{
+		Is Button Held(Event Player, Button(Ultimate)) == True;
+		Is Button Held(Event Player, Button(Crouch)) == False;
+		Is Alive(Event Player) == True;
+	}
+
+	actions
+	{
+		"Change the 30 to Increase or Shorten the TP distance."
+		Create Effect(Event Player, Sphere, Color(White), Ray Cast Hit Position(Eye Position(Event Player), Eye Position(Event Player)
+			+ Facing Direction Of(Event Player) * 30, All Players(All Teams), Event Player, True), 1, Visible To Position and Radius);
+		While(Is Button Held(Event Player, Button(Interact)) == True);
+			Wait(0.016, Ignore Condition);
+			If(Is Button Held(Event Player, Button(Crouch)) == True);
+				Destroy Effect(Last Created Entity);
+				Abort;
+			End;
+		End;
+		Skip If(Is Button Held(Event Player, Button(Interact)) == True, 1);
+		"Change the 30 to Increase or Shorten the TP distance."
+		Teleport(Event Player, Ray Cast Hit Position(Eye Position(Event Player), Eye Position(Event Player) + Facing Direction Of(
+			Event Player) * 30, All Players(All Teams), Event Player, True));
+		Destroy Effect(Last Created Entity);
+	}
+}
